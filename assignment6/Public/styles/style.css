@@ -1,0 +1,95 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container {
+    padding-top: 10px;
+    display: inline;
+    justify-content: center;
+  }
+
+table, th, td {
+    align-self: center;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+  }
+
+thead {
+    background-color: darkred;
+    color: white;
+}
+
+label {
+    display: inline-block;
+    width:200px;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    }
+
+.del_quake{
+  text-align: center;
+  width:auto;
+}
+
+.del_selector{
+  padding-top: 25px;
+}
+
+.form_earthquake{
+    padding-top: 25px;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    margin-left : 25%
+}
+
+tr:nth-child(even) {background-color: lightgray;}
+
+td:first-child{
+  font-weight: bold;
+  color: darkred;
+}
+
+.topnav {
+    background-color: darkred;
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .search_form{
+    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
+    padding: 14px 16px;
+    color: darkred;
+  }
+
+  #search_label{
+    display: inline;
+  }
+  
+  .topnav a:hover {
+    background-color: indianred;
+    color: white;
+  }
+  
+  .topnav a.active {
+    background-color: indianred;
+    color: white;
+  }
+  .indextitles{
+    text-align: center;
+    color: darkred;
+  }

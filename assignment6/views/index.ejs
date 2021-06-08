@@ -1,0 +1,77 @@
+<%- include('partials/header.ejs') -%>
+<h1 class = "indextitles">Earthquake Database</h1>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Research ID</th>
+                <th>Time</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Depth</th>
+                <th>Magnitude</th>
+                <th>Mag Type</th>
+                <th>Nst</th>
+                <th>Gap</th>
+                <th>Dmin</th>
+                <th>RMS</th>
+                <th>Net</th>
+                <th>Updated</th>
+                <th>Place</th>
+                <th>Horizontal Error</th>
+                <th>Depth Error</th>
+                <th>MagError</th> 
+                <th>MagNst</th>
+                <th>Location Source</th> 
+                <th>Mag Source</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <%if (quake.length >0){ %>
+            <% quake.forEach(function(row){ %>
+            <tr>
+              <td><%= row._id %></td>
+              <td><%= row.time %></td>
+              <td><%= row.latitude %></td>
+              <td><%= row.longitude %></td>
+              <td><%= row.depth %></td>
+              <td><%= row.mag %></td>
+              <td><%= row.magType %></td>
+              <td><%= row.nst %></td>
+              <td><%= row.gap %></td>
+              <td><%= row.dmin %></td>
+              <td><%= row.rms %></td>
+              <td><%= row.net %></td>
+              <td><%= row.updated %></td>
+              <td><%= row.place %></td>
+              <td><%= row.horizontalError %></td>
+              <td><%= row.depthError %></td>
+              <td><%= row.magError %></td>
+              <td><%= row.magNst %></td>
+              <td><%= row.locationSource %></td>
+              <td><%= row.magSource %></td>
+            </tr>
+            <% })}else{ %>
+              <tr>
+                  <td colspan="6">No Record Found</td>
+                  
+                </tr>
+              <% } %>
+          </tbody>
+
+    </table>
+    <h1 class = "indextitles">Search for Earthquake</h1>
+    <form class="search_form" action="/result" method="POST">
+      <label id="search_label" for="id" style = "font-weight: bold; font-size: 16px">Search Earthquakes by Research ID:</label>
+      <select name="id" id="id">
+          <option value="none" selected></option>
+          <%if (quake.length >0){ %>
+          <% quake.forEach(function(row){ %>
+          <option value='<%= row._id %>'><%= row._id %></option>
+          <% }) }%>
+      </select>  
+      <button type="submit">Search</button>
+  </form>
+</div>
+
+<%- include('partials/footer.ejs') -%>
